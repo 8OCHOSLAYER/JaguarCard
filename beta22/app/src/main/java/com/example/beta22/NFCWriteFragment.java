@@ -11,11 +11,13 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class NFCWriteFragment extends DialogFragment {
 
@@ -29,6 +31,12 @@ public class NFCWriteFragment extends DialogFragment {
     private TextView mTvMessage;
     private ProgressBar mProgress;
     private Listener mListener;
+
+
+
+
+
+
 
     @Nullable
     @Override
@@ -65,13 +73,21 @@ public class NFCWriteFragment extends DialogFragment {
 
     private void writeToNfc(Ndef ndef, String message){
 
+
+
+
         mTvMessage.setText(getString(R.string.message_write_progress));
         if (ndef != null) {
 
+
+
             try {
                 ndef.connect();
-               NdefRecord textRecord = NdefRecord.createMime(message, message.getBytes(Charset.forName("US-ASCII")));
+               NdefRecord textRecord = NdefRecord.createMime(message, message.getBytes(StandardCharsets.UTF_8));
                 ndef.writeNdefMessage(new NdefMessage(textRecord));
+
+
+
                 ndef.close();
                 //Write Successful
                 mTvMessage.setText(getString(R.string.message_write_success));

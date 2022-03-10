@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import android.widget.Spinner;
+
 public class MainActivity extends AppCompatActivity implements Listener {
 
     public static final String TAG = MainActivity.class.getSimpleName();
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements Listener {
     private EditText mEtMatricula;
     private EditText mEtsemestre;
     private EditText mEtTipoSangre;
+    private EditText mEtContacto;
     private EditText mEtTelefonoContacto;
     private EditText mEtredSocial;
 
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements Listener {
 
     private Button mBtWrite;
     private Button mBtRead;
+    private Spinner spi;
 
     private NFCWriteFragment mNfcWriteFragment;
     private NFCReadFragment mNfcReadFragment;
@@ -48,6 +52,10 @@ public class MainActivity extends AppCompatActivity implements Listener {
 
         initViews();
         initNFC();
+
+
+
+
     }
 
 
@@ -61,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements Listener {
         mEtMatricula=(EditText) findViewById(R.id.et_Matricula);
         mEtsemestre=(EditText) findViewById(R.id.et_semestre);
         mEtTipoSangre=(EditText) findViewById(R.id.et_TipoSangre);
+        mEtContacto=(EditText) findViewById(R.id.et_Contacto);
         mEtTelefonoContacto=(EditText) findViewById(R.id.et_TelefonoContacto);
         mEtredSocial=(EditText) findViewById(R.id.et_redSocial);
 
@@ -158,10 +167,11 @@ public class MainActivity extends AppCompatActivity implements Listener {
                     String messageToWrite3 =  mEtMatricula.getText().toString();
                     String messageToWrite4 = mEtsemestre.getText().toString();
                     String messageToWrite5 = mEtTipoSangre.getText().toString();
-                    String messageToWrite6 = mEtTelefonoContacto.getText().toString();
-                    String messageToWrite7 = mEtredSocial.getText().toString();
+                    String messageToWrite6 = mEtContacto.getText().toString();
+                    String messageToWrite7 = mEtTelefonoContacto.getText().toString();
+                    String messageToWrite8 = mEtredSocial.getText().toString();
 
-                    String datocompleto = messageToWrite+"\r\n"+messageToWrite2+"\n"+messageToWrite3+"\n"+messageToWrite4+"\n"+messageToWrite5+"\n"+messageToWrite6+"\n"+messageToWrite7;
+                    String datocompleto ="INSTITUTO TECONOLOGICO DE CHAMPOTON"+"\n"+"Jaguar Card"+"\n"+"Carrera: "+messageToWrite+"\r\n"+"Nombre Alumno: "+messageToWrite2+"\n"+"Matricula: "+messageToWrite3+"\n"+"Semestre: "+messageToWrite4+"\n"+"Tipo de Sangre"+messageToWrite5+"\n"+"Nombre Contacto: "+messageToWrite6+"\n"+"Telefono Contacto: "+messageToWrite7+"\n"+"RedSocial: "+messageToWrite8;
 
 
 
