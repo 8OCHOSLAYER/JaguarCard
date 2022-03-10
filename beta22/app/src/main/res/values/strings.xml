@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Jaguar Card Create</string>
+    <string name="message_write_error">Error al Escribir el Mensaje!</string>
+    <string name="message_write_success">Escrito con éxito en tu JaguarCard !</string>
+    <string name="message_write_progress">Escribir para tu JaguarCard..</string>
+    <string name="message_tag_detected">JaguarCard  detectada</string>
+    <string name="message_read_tag">Leer desde tarjeta NFC</string>
+    <string name="message_write_tag">Escribir en tarjeta</string>
+    <string name="message_tap_tag">Toca tu JaguarCard al dispositivo</string>
+
+
+    <string name="hint_message">Carrera</string>
+    <string name="NombrePersona">Nombre del Alumno</string>
+    <string name="Matricula">Matricula del estudiante</string>
+    <string name="SEMESTRE">Semestre</string>
+    <string name="TipoSangre">Tipo de Sangre</string>
+    <string name="Contacto">Nombre de contacto</string>
+    <string name="TelefonoContacto">Telefono </string>
+    <string name="redsocial">Red Social</string>
+
+</resources>
