@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements Listener {
         initViews();
         initNFC();
     }
+
+
     private void initViews() {
 /*
 * Seccion donde creamos las nuevas variables para obtener la informacion capturada por el usuario
@@ -159,11 +161,13 @@ public class MainActivity extends AppCompatActivity implements Listener {
                     String messageToWrite6 = mEtTelefonoContacto.getText().toString();
                     String messageToWrite7 = mEtredSocial.getText().toString();
 
+                    String datocompleto = messageToWrite+"\r\n"+messageToWrite2+"\n"+messageToWrite3+"\n"+messageToWrite4+"\n"+messageToWrite5+"\n"+messageToWrite6+"\n"+messageToWrite7;
+
 
 
 
                     mNfcWriteFragment = (NFCWriteFragment) getFragmentManager().findFragmentByTag(NFCWriteFragment.TAG);
-                    mNfcWriteFragment.onNfcDetected(ndef,messageToWrite+"\r\n"+messageToWrite2+"\n"+messageToWrite3+"\n"+messageToWrite4+"\n"+messageToWrite5+"\n"+messageToWrite6+"\n"+messageToWrite7);
+                    mNfcWriteFragment.onNfcDetected(ndef,datocompleto);
 
 
                 } else {

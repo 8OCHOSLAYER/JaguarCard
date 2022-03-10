@@ -70,8 +70,8 @@ public class NFCWriteFragment extends DialogFragment {
 
             try {
                 ndef.connect();
-                NdefRecord mimeRecord = NdefRecord.createMime("text/plain", message.getBytes(Charset.forName("US-ASCII")));
-                ndef.writeNdefMessage(new NdefMessage(mimeRecord));
+               NdefRecord textRecord = NdefRecord.createMime(message, message.getBytes(Charset.forName("US-ASCII")));
+                ndef.writeNdefMessage(new NdefMessage(textRecord));
                 ndef.close();
                 //Write Successful
                 mTvMessage.setText(getString(R.string.message_write_success));
