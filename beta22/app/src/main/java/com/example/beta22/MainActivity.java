@@ -19,6 +19,17 @@ public class MainActivity extends AppCompatActivity implements Listener {
 
     private EditText mEtMessage;
     private EditText mEtMessage2;
+    private EditText mEtMatricula;
+    private EditText mEtsemestre;
+    private EditText mEtTipoSangre;
+    private EditText mEtTelefonoContacto;
+    private EditText mEtredSocial;
+
+
+
+
+
+
     private Button mBtWrite;
     private Button mBtRead;
 
@@ -39,9 +50,20 @@ public class MainActivity extends AppCompatActivity implements Listener {
         initNFC();
     }
     private void initViews() {
+/*
+* Seccion donde creamos las nuevas variables para obtener la informacion capturada por el usuario
+* */
 
         mEtMessage = (EditText) findViewById(R.id.et_message);
         mEtMessage2 = (EditText) findViewById(R.id.et_mensaje2);
+        mEtMatricula=(EditText) findViewById(R.id.et_Matricula);
+        mEtsemestre=(EditText) findViewById(R.id.et_semestre);
+        mEtTipoSangre=(EditText) findViewById(R.id.et_TipoSangre);
+        mEtTelefonoContacto=(EditText) findViewById(R.id.et_TelefonoContacto);
+        mEtredSocial=(EditText) findViewById(R.id.et_redSocial);
+
+
+
         mBtWrite = (Button) findViewById(R.id.btn_write);
         mBtRead = (Button) findViewById(R.id.btn_read);
 
@@ -131,8 +153,17 @@ public class MainActivity extends AppCompatActivity implements Listener {
 
                     String messageToWrite = mEtMessage.getText().toString();
                     String messageToWrite2 = mEtMessage2.getText().toString();
+                    String messageToWrite3 =  mEtMatricula.getText().toString();
+                    String messageToWrite4 = mEtsemestre.getText().toString();
+                    String messageToWrite5 = mEtTipoSangre.getText().toString();
+                    String messageToWrite6 = mEtTelefonoContacto.getText().toString();
+                    String messageToWrite7 = mEtredSocial.getText().toString();
+
+
+
+
                     mNfcWriteFragment = (NFCWriteFragment) getFragmentManager().findFragmentByTag(NFCWriteFragment.TAG);
-                    mNfcWriteFragment.onNfcDetected(ndef,messageToWrite+"\r\n\r\n"+messageToWrite2);
+                    mNfcWriteFragment.onNfcDetected(ndef,messageToWrite+"\r\n"+messageToWrite2+"\n"+messageToWrite3+"\n"+messageToWrite4+"\n"+messageToWrite5+"\n"+messageToWrite6+"\n"+messageToWrite7);
 
 
                 } else {
